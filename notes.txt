@@ -1,0 +1,11 @@
+527 public:jabadehut$ ../sspa create_bucket learnjs.jefferyfinley.com
+make_bucket: s3://learnjs.jefferyfinley.com/
+Website endpoint is: http://learnjs.jefferyfinley.com.s3-website-us-east-1.amazonaws.com
+528 public:jabadehut$ ../sspa create_bucket test.learnjs.jefferyfinley.com
+make_bucket: s3://test.learnjs.jefferyfinley.com/
+Website endpoint is: http://test.learnjs.jefferyfinley.com.s3-website-us-east-1.amazonaws.com
+529 public:jabadehut$ ../sspa create_bucket stage.learnjs.jefferyfinley.com
+make_bucket: s3://stage.learnjs.jefferyfinley.com/
+Website endpoint is: http://stage.learnjs.jefferyfinley.com.s3-website-us-east-1.amazonaws.com
+
+
