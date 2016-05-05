@@ -40,8 +40,8 @@ function googleSignIn(googleUser) {
 
 
 var learnjs = {
-    poolId: 'us-east-1:4e420732-a731-453c-a2b5-be7dccabce27'
-//    poolId: 'us-east-1:79940213-7ace-4891-868d-3a3e57688562'
+    // learnjs2 poolId: 'us-east-1:4e420732-a731-453c-a2b5-be7dccabce27'
+    poolId: 'us-east-1:79940213-7ace-4891-868d-3a3e57688562'
 };
 
 learnjs.identity = new $.Deferred();
@@ -69,18 +69,18 @@ learnjs.applyObject = function(obj, elem) {
 }
 learnjs.awsRefresh = function() {
     var deferred = new $.Deferred();
-    console.log("credentials " + AWS.config.credentials);
-    console.log("sessionToken:  " + AWS.config.credentials.sessionToken);
-   /* 
+    
+    console.log("google token: " + AWS.config.credentials.params.Logins["accounts.google.com"]);
     AWS.config.credentials.refresh(function(err) {
+        console.log("refresh google token: " + AWS.config.credentials.params.Logins["accounts.google.com"]);
         if (err) {
             deferred.reject(err);
         } else {
             deferred.resolve(AWS.config.credentials.identityId);
         }
     });
-    */
-    var id_token = AWS.config.credentials.params.Logins("accounts.google.com");
+    /*
+    var id_token = AWS.config.credentials.params.Logins["accounts.google.com"];
     AWS.config.update({
         region: 'us-east-1',
         credentials: new AWS.CognitoIdentityCredentials({
@@ -90,6 +90,7 @@ learnjs.awsRefresh = function() {
             }
         })
     });
+    */
     return deferred.promise();
 }
 learnjs.buildCorrectFlash = function(problemNum) {
